@@ -9,5 +9,5 @@
 // The MyIntStack program contains an empty constructor.
 
 class MyIntStack {
-    
+    init() { }
 }

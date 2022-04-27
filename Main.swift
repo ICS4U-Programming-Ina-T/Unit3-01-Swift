@@ -11,9 +11,9 @@
 // and search).
 
 class Main {
-    init() {}
+    init() { }
 }
 
 // creates an object for the Stacks
-var myIntObj = Main()
-var myStringObj = Main()
+var myIntStack = Main()
+var myStringStack = Main()
