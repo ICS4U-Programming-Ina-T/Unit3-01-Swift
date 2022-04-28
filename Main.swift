@@ -7,8 +7,8 @@
 // Copyright (c) 2022 Ina Tolo. All rights reserved.
 //
 // The Main program implements an application that
-// performs standard Stack commands (push, pop, peek,
-// and search).
+// gets input from the user, then uses an object to
+// perform commands in a Stack.
 
 class Main {
     init() { }
