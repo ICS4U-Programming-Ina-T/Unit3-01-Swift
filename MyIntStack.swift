@@ -6,7 +6,8 @@
 // Version 1.0
 // Copyright (c) 2022 Ina Tolo. All rights reserved.
 //
-// The MyIntStack program contains an empty constructor.
+// The MyIntStack program will perform commands
+// used in Stack (push, pop, etc.)
 
 class MyIntStack {
     init() { }
