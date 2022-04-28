@@ -7,6 +7,7 @@
 // Copyright (c) 2022 Ina Tolo. All rights reserved.
 //
 // The MyStringStack program contains an empty constructor.
+// used in Stack (push, pop, etc.)
 
 class MyStringStack {
     init() { }
