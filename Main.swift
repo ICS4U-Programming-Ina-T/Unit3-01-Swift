@@ -74,7 +74,7 @@ var userNumString: String = ""
 var userCountString: String = ""
 var userString: String = ""
 var userNumInt: Int = 0
-var userCountInt: Int = 0
+var userCountInt: Int = -1
 var elementNum: Int = 0
 let error = "Not a valid choice.\n"
 
@@ -103,7 +103,7 @@ while userOption1Up != "PUSH"
                     try catchString()
                 }
 
-                if userCountInt <= 0 {
+                if userCountInt < 0 {
                     print("Not a valid choice.\n")
                     continue
                 }
