@@ -91,7 +91,7 @@ while userOption1Up != "PUSH"
     // checks which of the commands to execute
     if userOption1Up == "PUSH" {
 
-        while userCountInt <= 1 {
+        while userCountInt < 0 {
             // gets input for number of elements in the stack
             print("How many elements would you like to add?: ", terminator: "")
             userCountString = readLine()!
@@ -103,7 +103,7 @@ while userOption1Up != "PUSH"
                     try catchString()
                 }
 
-                if userCountInt < 0 {
+                if userCountInt <= 0 {
                     print("Not a valid choice.\n")
                     continue
                 }
