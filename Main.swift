@@ -44,6 +44,7 @@ class MyIntStack {
     func stackPop() -> Int {
         var popValue: Int
 
+        // checks if stack is empty
         if stack.count == 0 {
             print("Stack is empty.")
             print()
@@ -57,6 +58,45 @@ class MyIntStack {
             print()
         }
         return popValue
+    }
+
+    // tells the user what is at the top of the stack
+    func stackPeek() -> Int {
+        var peekValue: Int
+
+        // checks if stack is empty
+        if stack.count == 0 {
+            print("Empty stack. Nothing to peek.")
+            print()
+
+            peekValue = -1
+        } else {
+            // looks at top value
+            peekValue = stack.last!
+
+            print("*** \(peekValue) is on top of the stack.")
+            print()
+        }
+        return peekValue
+    }
+
+    // removes all elements from the stack
+    func stackClear() {
+        // checks if stack is empty
+        if stack.count == 0 {
+            print("Stack is already empty.")
+            print()
+        } else {
+            // alerts user command is complete
+            print("*** Stack has been emptied.")
+            print("*** Old stack = \(stack)")
+
+            // empties stack
+            stack.removeAll()
+
+            print("*** New stack = \(stack)")
+            print()
+        }
     }
 }
 
@@ -94,6 +134,45 @@ class MyStringStack {
             print()
         }
         return popValue
+    }
+
+    // tells the user what is at the top of the stack
+    func stackPeek() -> String {
+        var peekValue: String
+
+        // checks if stack is empty
+        if stack.count == 0 {
+            print("Empty stack. Nothing to peek.")
+            print()
+
+            peekValue = ""
+        } else {
+            // looks at top value
+            peekValue = stack.last!
+
+            print("*** \(peekValue) is on top of the stack.")
+            print()
+        }
+        return peekValue
+    }
+
+    // removes all elements from the stack
+    func stackClear() {
+        // checks if stack is empty
+        if stack.count == 0 {
+            print("Stack is already empty.")
+            print()
+        } else {
+            // alerts user command is complete
+            print("*** Stack has been emptied.")
+            print("*** Old stack = \(stack)")
+
+            // empties stack
+            stack.removeAll()
+
+            print("*** New stack = \(stack)")
+            print()
+        }
     }
 }
 
@@ -134,7 +213,7 @@ while userOption2Up != "INT" || userOption2Up != "STRING" {
             || userOption1Up != "CLEAR" {
 
             // gets command input from the user
-            print("Which command would you like to execute (push, pop, search, or peek)?: ", terminator: "")
+            print("Which command would you like to execute (push, pop, peek, or clear)?: ", terminator: "")
             userOption1Low = readLine()!
 
             userOption1Up = userOption1Low.uppercased()
@@ -201,6 +280,13 @@ while userOption2Up != "INT" || userOption2Up != "STRING" {
                         print(errorMessage)
                     }
                 }
+
+                // resets counter values
+                elementNum = 0
+                userCountInt = -1
+
+                /* determines what the user would like to
+                do after previous command is finished*/
                 while userOption3Up != "YES" || userOption3Up != "NO" {
                     print("Would you like to do something else to the stack? (Yes or No): ", terminator: "")
                     userOption3Low = readLine()!
@@ -242,11 +328,55 @@ while userOption2Up != "INT" || userOption2Up != "STRING" {
                     }
                 }
             } else if userOption1Up == "PEEK" {
-                // fill in code later
-                break
+                // checks which stack to peek
+                if userOption2Up == "INT" {
+                    myIntStack.stackPeek()
+                } else if userOption2Up == "STRING" {
+                    myStringStack.stackPeek()
+                }
+
+                /* determines what the user would like to
+                do after previous command is finished*/
+                while userOption3Up != "YES" || userOption3Up != "NO" {
+                    print("Would you like to do something else to the stack? (Yes or No): ", terminator: "")
+                    userOption3Low = readLine()!
+
+                    userOption3Up = userOption3Low.uppercased()
+
+                    if userOption3Up == "YES" {
+                        print()
+                        break
+                    } else if userOption3Up == "NO" {
+                        exit(0)
+                    } else {
+                        print(error)
+                    }
+                }
             } else if userOption1Up == "CLEAR" {
-                // fill in code later
-                break
+                // checks which stack to clear
+                if userOption2Up == "INT" {
+                    myIntStack.stackClear()
+                } else if userOption2Up == "STRING" {
+                    myStringStack.stackClear()
+                }
+
+                /* determines what the user would like to
+                do after previous command is finished*/
+                while userOption3Up != "YES" || userOption3Up != "NO" {
+                    print("Would you like to do something else to the stack? (Yes or No): ", terminator: "")
+                    userOption3Low = readLine()!
+
+                    userOption3Up = userOption3Low.uppercased()
+
+                    if userOption3Up == "YES" {
+                        print()
+                        break
+                    } else if userOption3Up == "NO" {
+                        exit(0)
+                    } else {
+                        print(error)
+                    }
+                }
             } else {
                 print(error)
             }
